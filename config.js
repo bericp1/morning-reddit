@@ -4,12 +4,11 @@ module.exports = exports = {
   snoocore: {
     userAgent: pkg.name + '@' + pkg.version,
     oauth: {
-      type: 'script',
+      type: 'explicit',
       key: process.env.REDDIT_KEY || '',
       secret: process.env.REDDIT_SECRET || '',
-      username: process.env.REDDIT_USERNAME || '',
-      password: process.env.REDDIT_PASSWORD || '',
-      scope: [ 'read', 'identity' ]
+      scope: ['read'],
+      redirectUri: 'http://morning-reddit.com/'
     }
   },
   port: process.env.PORT || 5000
