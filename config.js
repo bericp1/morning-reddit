@@ -5,8 +5,8 @@ module.exports = exports = {
     userAgent: pkg.name + '@' + pkg.version,
     oauth: {
       type: 'script',
-      key: process.env.REDDIT_USERNAME || '',
-      secret: process.env.REDDIT_USERNAME || '',
+      key: process.env.REDDIT_KEY || '',
+      secret: process.env.REDDIT_SECRET || '',
       username: process.env.REDDIT_USERNAME || '',
       password: process.env.REDDIT_PASSWORD || '',
       scope: [ 'read', 'identity' ]
