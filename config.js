@@ -1,14 +1,14 @@
 var pkg = require('./package.json');
 
-modules.export = {
+module.exports = exports = {
   snoocore: {
     userAgent: pkg.name + '@' + pkg.version,
     oauth: {
       type: 'script',
-      key: 'Ewsu6qt3wOgruQ',
-      secret: 'bCcXwIFSsmoE99kaNtldgr32LIo',
+      key: process.env.REDDIT_USERNAME || '',
+      secret: process.env.REDDIT_USERNAME || '',
       username: process.env.REDDIT_USERNAME || '',
-      password: process.env.REDDIT_PASS || '',
+      password: process.env.REDDIT_PASSWORD || '',
       scope: [ 'read', 'identity' ]
     }
   },
