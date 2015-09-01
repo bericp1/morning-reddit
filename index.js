@@ -33,6 +33,12 @@ app.get('/', function(req, res) {
     });
     resp += '</div></body></html>';
     res.send(resp);
+  })
+  .catch(function() {
+    console.err('caught reddit error:', arguments);
+    resp += '<div class="alert alert-danger">Something went wrong!</div>';
+    resp += '</div></body></html>';
+    res.send(resp);
   });
 });
 
