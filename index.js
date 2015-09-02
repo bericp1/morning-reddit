@@ -14,7 +14,7 @@ var getTopComment = function(post) {
     .get({context:0,limit:1,depth:0,sort:'top'})
     .then(function(comment) {
       comment = comment[1].data.children;
-      post.data.top_comment = comment.length ?
+      post.data.top_comment = (comment.length && typeof comment[0].data.body_html === 'string') ?
         he.decode(comment[0].data.body_html) :
         '<em>No comments</em>';
       return post;
